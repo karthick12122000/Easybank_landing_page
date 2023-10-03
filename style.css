@@ -13,7 +13,7 @@
   --White: hsl(0, 0%, 100%);
 }
 body {
-  background-color: var(--VeryLightGray);
+  background-color: var(--LightGrayishBlue);
 }
 .attribution {
   font-size: 11px;
@@ -36,3 +36,21 @@ body {
 .navbar-toggler:focus {
   box-shadow: none;
 }
+.hero__slide {
+  background-image: url("./images/bg-intro-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: 150%;
+  min-height: 650px;
+  background-color: var(--VeryLightGray);
+}
+.card-img-top {
+  width: 100px;
+  height: 100px;
+}
+.service {
+  min-height: 650px;
+}
+/* .hero__img {
+  width: inherit;
+  height: 500px;
+} */
