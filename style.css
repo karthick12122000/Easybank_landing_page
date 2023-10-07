@@ -104,6 +104,16 @@ a:hover {
   color: var(--LimeGreen);
   filter: hue-rotate(120deg);
 }
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+h1,
+h5,
+.article h5 a {
+  color: var(--DarkBlue) !important;
+}
+
 @media screen and (max-width: 992px) {
   .hero__slide {
     background-image: url("./images/bg-intro-mobile.svg");
@@ -112,5 +122,30 @@ a:hover {
   }
   .attribution {
     position: initial;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White);
+    transform: translateY(43px);
+    border-radius: 11px;
+    padding: 18px;
+  }
+  .btn-close {
+    display: none;
+  }
+  button[aria-expanded="true"] .btn-close {
+    display: block;
+  }
+  button[aria-expanded="true"] .navbar-toggler-icon {
+    display: none;
+  }
+  .btn__request {
+    display: none;
   }
 }
