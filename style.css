@@ -15,6 +15,29 @@
 header {
   z-index: 1;
 }
+a:hover {
+  color: var(--LimeGreen) !important;
+}
+a.nav-link.active::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(55deg, var(--LimeGreen), var(--BrightCyan));
+  display: block;
+  transform: translateY(25px);
+}
+a.nav-link:hover {
+  color: var(--DarkBlue) !important;
+}
+.nav-item:hover .nav-link::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(55deg, var(--LimeGreen), var(--BrightCyan));
+  display: block;
+  transform: translateY(25px);
+}
+
 body {
   background-color: var(--LightGrayishBlue);
   font-family: "Public Sans", sans-serif;
@@ -45,8 +68,8 @@ body {
 .hero__slide {
   background-image: url("./images/bg-intro-desktop.svg");
   background-repeat: no-repeat;
-  background-position: 150%;
-
+  background-position-x: 900px;
+  background-position-y: -262px;
   background-color: var(--VeryLightGray);
 }
 .hero__slide:is(.container, .row, .content) {
@@ -79,16 +102,11 @@ body {
   width: 100%;
   height: 400px;
 }
-.hero__imgxs {
-  width: 100%;
 
-  position: absolute;
-  top: -8%;
-  left: 0;
-}
 footer {
   min-height: 300px;
   background-color: var(--DarkBlue);
+  padding: 15px;
 }
 .mb-10 {
   margin-bottom: 5rem;
@@ -96,9 +114,7 @@ footer {
 .sub--text {
   color: var(--GrayishBlue);
 }
-a:hover {
-  color: var(--LimeGreen) !important;
-}
+
 .social--icon img:hover {
   cursor: pointer;
   color: var(--LimeGreen);
@@ -113,12 +129,17 @@ h5,
 .article h5 a {
   color: var(--DarkBlue) !important;
 }
+@media screen and (max-width: 1500px) {
+  .hero__slide {
+    background-position-x: 500px;
+  }
+}
 
 @media screen and (max-width: 992px) {
   .hero__slide {
     background-image: url("./images/bg-intro-mobile.svg");
     background-position-y: top;
-    background-position-x: top;
+    background-position-x: right;
   }
   .attribution {
     position: initial;
@@ -135,6 +156,9 @@ h5,
     transform: translateY(43px);
     border-radius: 11px;
     padding: 18px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   .btn-close {
     display: none;
@@ -147,5 +171,24 @@ h5,
   }
   .btn__request {
     display: none;
+  }
+  .nav-item:hover .nav-link::after,
+  a.nav-link.active::after {
+    display: none;
+  }
+  .hero__imgxs {
+    width: 60%;
+
+    position: absolute;
+    top: -8%;
+    left: 20%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .hero__imgxs {
+    width: 100%;
+    position: absolute;
+    top: -8%;
+    left: 0;
   }
 }
